@@ -1,131 +1,162 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Резорт-Юг – Родителям и семьям</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: linear-gradient(135deg, #0f172a, #1e40af); color: #fff; min-height:100vh;}
-  nav a:hover { color: #60a5fa; }
-  .fade-in { animation: fadeIn 1.2s ease-in forwards; opacity:0; }
-  @keyframes fadeIn { 0%{opacity:0; transform:translateY(30px);} 100%{opacity:1; transform:translateY(0);} }
-  .btn-primary { background: linear-gradient(45deg,#3b82f6,#93c5fd); border-radius:12px; font-weight:600; transition:all 0.3s ease;}
-  .btn-primary:hover { background: linear-gradient(45deg,#2563eb,#60a5fa); transform:scale(1.05);}
-  .card { background: rgba(255,255,255,0.15); backdrop-filter: blur(12px); border-radius:16px; border:1px solid rgba(255,255,255,0.3); padding:1.5rem; transition:all 0.3s; }
-  .card:hover { transform:translateY(-8px); box-shadow:0 20px 40px rgba(0,0,0,0.5);}
-  .typewriter { border-right: .15em solid #60a5fa; white-space: nowrap; overflow: hidden; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Резорт-Юг — Семья и Отдых</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(135deg, #1c1f1d, #2d3a2f);
+      color: #f0f0f0;
+      overflow-x: hidden;
+    }
+
+    header {
+      backdrop-filter: blur(20px);
+      background: rgba(60, 80, 65, 0.3);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.4rem;
+      background: linear-gradient(90deg, #8ccf9d, #b0e0b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 0;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #cfd8cf;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #9fe3a6;
+    }
+
+    .hero {
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      background: url('https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(28,31,29,0.6);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      animation: typing 4s steps(40) 1 normal both;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #9fe3a6;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+      animation-delay: 4.2s;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .glass {
+      background: rgba(60, 80, 65, 0.3);
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+
+    .glass:hover {
+      transform: translateY(-5px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(28, 31, 29, 0.8);
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-<!-- Navigation -->
-<nav class="bg-black bg-opacity-90 p-4 sticky top-0 z-20 shadow-lg">
-  <div class="container mx-auto flex justify-between items-center">
-    <div class="text-2xl font-bold">Резорт-Юг</div>
-    <div class="space-x-6">
+  <header>
+    <h1>ООО "Резорт-Юг"</h1>
+    <nav>
       <a href="index.html">Главная</a>
-      <a href="courses.html">Советы и программы</a>
+      <a href="courses.html">Советы и курсы</a>
       <a href="events.html">Мероприятия</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Семья. Отдых. Гармония.</h2>
+      <p>Мы создаём пространство для родителей, которые ценят воспитание, совместные путешествия и отдых без лишних забот.</p>
     </div>
-  </div>
-</nav>
+  </section>
 
-<!-- Hero -->
-<section class="h-[600px] flex items-center justify-center text-center fade-in">
-  <div>
-    <h1 class="text-5xl md:text-7xl font-extrabold mb-6 typewriter" id="hero-text"></h1>
-    <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto fade-in" style="animation-delay:0.5s;">Добро пожаловать на портал семьи и отдыха от Резорт-Юг. Полезные советы по отдыху, воспитанию и совместной активности для всей семьи.</p>
-    <a href="courses.html" class="btn-primary px-8 py-4 text-lg">Начать обучение</a>
-  </div>
-</section>
-
-<!-- About Section -->
-<section class="container mx-auto p-8 grid md:grid-cols-2 gap-8">
-  <div class="card fade-in">
-    <h2 class="text-3xl font-bold mb-4">Наша миссия</h2>
-    <p class="text-gray-200 mb-4">Мы хотим сделать семейный отдых безопасным и полезным. Предоставляем экспертные советы по воспитанию, досугу и совместной активности, чтобы родители могли с уверенностью планировать досуг и заботиться о детях.</p>
-    <p class="text-gray-200">Наша команда включает педагогов, психологов и организаторов досуга, которые делятся практическими рекомендациями, методиками и проверенными сценариями отдыха для семей с детьми любого возраста.</p>
-  </div>
-  <div class="card fade-in">
-    <h2 class="text-3xl font-bold mb-4">Для кого этот ресурс</h2>
-    <ul class="list-disc pl-6 text-gray-200 space-y-2">
-      <li>Родители с детьми разных возрастов</li>
-      <li>Педагоги и воспитатели</li>
-      <li>Семьи, которые хотят планировать активный отдых</li>
-      <li>Все, кто хочет улучшить воспитание и досуг детей</li>
-    </ul>
-  </div>
-</section>
-
-<!-- Tips Preview -->
-<section class="container mx-auto p-8">
-  <h2 class="text-3xl font-bold mb-6">Что вы найдете на сайте</h2>
-  <div class="grid md:grid-cols-3 gap-6">
-    <div class="card">
-      <h3 class="text-xl font-semibold mb-2">Советы по отдыху</h3>
-      <p class="text-gray-200 mb-2">Планирование выходных, путешествий, развивающих игр на свежем воздухе и дома. Практические лайфхаки, чтобы каждый день был увлекательным для детей.</p>
-      <button onclick="alert('Подробные советы по отдыху')" class="btn-primary px-4 py-2 mt-2">Узнать больше</button>
+  <section class="section">
+    <div class="glass">
+      <h3>Кто мы?</h3>
+      <p>ООО «Резорт-Юг» — компания, объединяющая лучшие практики семейного отдыха и родительского образования. Мы верим, что отдых и воспитание детей должны идти рука об руку: укрепляя здоровье, расширяя кругозор и создавая прочный фундамент для будущего. </p>
     </div>
-    <div class="card">
-      <h3 class="text-xl font-semibold mb-2">Советы по воспитанию</h3>
-      <p class="text-gray-200 mb-2">Методы воспитания, развитие навыков ответственности и самостоятельности, рекомендации психологов для гармоничного развития ребенка.</p>
-      <button onclick="alert('Подробные советы по воспитанию')" class="btn-primary px-4 py-2 mt-2">Узнать больше</button>
+    <div class="glass">
+      <h3>Что мы предлагаем?</h3>
+      <p>Мы проводим онлайн-курсы для родителей, организуем практические мероприятия и создаём уникальные программы семейного отдыха. Здесь вы найдёте материалы по воспитанию детей, советы по организации досуга и психологические практики, которые помогут наладить баланс между работой, отдыхом и заботой о ребёнке.</p>
     </div>
-    <div class="card">
-      <h3 class="text-xl font-semibold mb-2">Онлайн активности</h3>
-      <p class="text-gray-200 mb-2">Игры, мастер-классы и вебинары, где можно учиться и веселиться всей семьей. Подробные инструкции и расписание мероприятий.</p>
-      <button onclick="alert('Подробные онлайн активности')" class="btn-primary px-4 py-2 mt-2">Узнать больше</button>
+    <div class="glass">
+      <h3>Наша цель</h3>
+      <p>Мы хотим, чтобы каждая семья могла проводить время вместе с пользой. Наши курсы и мероприятия начинаются с 5 сентября и будут проходить на регулярной основе: лекции, мастер-классы, совместные выезды и онлайн-встречи.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Registration -->
-<section class="container mx-auto p-8">
-  <div class="card">
-    <h2 class="text-3xl font-bold mb-4">Присоединяйтесь</h2>
-    <p class="text-gray-200 mb-4">Зарегистрируйтесь, чтобы получать новые советы, доступ к вебинарам и мероприятиям.</p>
-    <form id="register-form" onsubmit="handleRegister(event)">
-      <div class="grid md:grid-cols-2 gap-4 mb-4">
-        <input type="text" id="name" placeholder="Имя" class="p-4 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-        <input type="email" id="email" placeholder="E-mail" class="p-4 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-        <select id="category" class="p-4 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-          <option value="">Выберите категорию</option>
-          <option value="Родитель">Родитель</option>
-          <option value="Педагог">Педагог</option>
-          <option value="Семья">Семья</option>
-        </select>
-      </div>
-      <button type="submit" class="btn-primary px-6 py-3">Зарегистрироваться</button>
-    </form>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="bg-black bg-opacity-90 p-6 text-center mt-8">
-  &copy; 2025 Резорт-Юг. Все права защищены.
-</footer>
-
-<script>
-  const heroText = "Добро пожаловать на портал семьи и отдыха от Резорт-Юг!";
-  let i = 0;
-  function typeWriter() {
-    if (i < heroText.length) {
-      document.getElementById("hero-text").innerHTML += heroText.charAt(i);
-      i++;
-      setTimeout(typeWriter, 50);
-    }
-  }
-  typeWriter();
-
-  function handleRegister(event){
-    event.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const category = document.getElementById('category').value;
-    alert(`Регистрация успешна! Имя: ${name}, Email: ${email}, Категория: ${category}`);
-    document.getElementById('register-form').reset();
-  }
-</script>
+  <footer>
+    © 2025 ООО «Резорт-Юг». Все права защищены.
+  </footer>
 </body>
 </html>
