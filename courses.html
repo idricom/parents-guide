@@ -1,118 +1,138 @@
-<!-- courses.html -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Резорт-Юг – Советы и программы</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: linear-gradient(135deg, #0f172a, #1e40af); color: #fff; min-height:100vh;}
-  nav a:hover { color: #60a5fa; }
-  .fade-in { animation: fadeIn 1.2s ease-in forwards; opacity:0; }
-  @keyframes fadeIn { 0%{opacity:0; transform:translateY(30px);} 100%{opacity:1; transform:translateY(0);} }
-  .btn-primary { background: linear-gradient(45deg,#3b82f6,#93c5fd); border-radius:12px; font-weight:600; transition:all 0.3s ease;}
-  .btn-primary:hover { background: linear-gradient(45deg,#2563eb,#60a5fa); transform:scale(1.05);}
-  .card { background: rgba(255,255,255,0.15); backdrop-filter: blur(12px); border-radius:16px; border:1px solid rgba(255,255,255,0.3); padding:1.5rem; transition:all 0.3s; cursor:pointer; }
-  .card:hover { transform:translateY(-8px); box-shadow:0 20px 40px rgba(0,0,0,0.5);}
-  .hidden-text { display:none; margin-top:0.5rem; color:#d1d5db; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Советы и Курсы — Резорт-Юг</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(135deg, #1c1f1d, #2d3a2f);
+      color: #f0f0f0;
+    }
+    header {
+      backdrop-filter: blur(20px);
+      background: rgba(60, 80, 65, 0.3);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      align-items: center;
+    }
+    header h1 {
+      font-size: 1.4rem;
+      background: linear-gradient(90deg, #8ccf9d, #b0e0b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 0;
+    }
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #cfd8cf;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #9fe3a6;
+    }
+    .section {
+      padding: 3rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .glass {
+      background: rgba(60, 80, 65, 0.3);
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, #9fe3a6, #b0e0b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .course {
+      margin-bottom: 2rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background: rgba(159, 227, 166, 0.2);
+      border-radius: 12px;
+      color: #9fe3a6;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .btn:hover {
+      background: rgba(159, 227, 166, 0.4);
+      transform: scale(1.05);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(28, 31, 29, 0.8);
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-<!-- Navigation -->
-<nav class="bg-black bg-opacity-90 p-4 sticky top-0 z-20 shadow-lg">
-  <div class="container mx-auto flex justify-between items-center">
-    <div class="text-2xl font-bold">Резорт-Юг</div>
-    <div class="space-x-6">
+  <header>
+    <h1>ООО "Резорт-Юг"</h1>
+    <nav>
       <a href="index.html">Главная</a>
-      <a href="courses.html">Советы и программы</a>
+      <a href="courses.html">Советы и курсы</a>
       <a href="events.html">Мероприятия</a>
+    </nav>
+  </header>
+
+  <section class="section">
+    <h2>Советы для родителей</h2>
+    <div class="glass course">
+      <h3>Как наладить режим ребёнка</h3>
+      <p>Режим дня помогает ребёнку чувствовать себя уверенно, знать, что и когда произойдёт. В этом разделе мы делимся практическими методами, как адаптировать режим к школе и саду, как правильно организовать сон и питание.</p>
+      <a class="btn" href="#">Узнать больше</a>
     </div>
-  </div>
-</nav>
-
-<!-- Hero -->
-<section class="h-[400px] flex items-center justify-center text-center fade-in">
-  <div>
-    <h1 class="text-5xl md:text-6xl font-extrabold mb-6">Советы для родителей и семьи</h1>
-    <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Практические рекомендации по отдыху, воспитанию, совместной активности и организации досуга детей от экспертов Резорт-Юг.</p>
-  </div>
-</section>
-
-<!-- Courses/Programs Section -->
-<section class="container mx-auto p-8">
-  <h2 class="text-3xl font-bold mb-6">Популярные программы и советы</h2>
-  <div class="grid md:grid-cols-3 gap-6">
-    <div class="card" onclick="toggleText(this)">
-      <h3 class="text-xl font-semibold mb-2">Летние активные игры</h3>
-      <p class="text-gray-200">Развивающие и безопасные игры на свежем воздухе для детей всех возрастов.</p>
-      <div class="hidden-text">
-        <p>Наши эксперты подготовили подробный план активностей на каждый день летних каникул. Игры включают элементы командной работы, развитие координации, логики и творческого мышления. Также есть советы по подготовке безопасной игровой зоны на улице или в саду.</p>
-      </div>
-      <button class="btn-primary px-4 py-2 mt-2">Узнать больше</button>
+    <div class="glass course">
+      <h3>Психология общения с подростками</h3>
+      <p>Подростковый возраст — время перемен. Мы расскажем о подходах, которые помогут сохранить доверие и тёплые отношения с ребёнком, поддержать его инициативы и вместе справляться со сложностями.</p>
+      <a class="btn" href="#">Узнать больше</a>
     </div>
-
-    <div class="card" onclick="toggleText(this)">
-      <h3 class="text-xl font-semibold mb-2">Воспитание через творчество</h3>
-      <p class="text-gray-200">Методы развития творческого мышления, арт-проекты и мастер-классы.</p>
-      <div class="hidden-text">
-        <p>Мы предлагаем более 50 идей для совместных арт-проектов с детьми. Каждое занятие направлено на развитие фантазии, усидчивости и мелкой моторики. Включены пошаговые инструкции, список материалов и советы педагогов по адаптации проектов для разных возрастов.</p>
-      </div>
-      <button class="btn-primary px-4 py-2 mt-2">Узнать больше</button>
+    <div class="glass course">
+      <h3>Семейный досуг и отдых</h3>
+      <p>Семейные игры, прогулки и даже короткие поездки укрепляют эмоциональную связь. Мы собрали десятки идей активностей на каждый день, которые не требуют больших затрат, но дарят массу положительных эмоций.</p>
+      <a class="btn" href="#">Узнать больше</a>
     </div>
+  </section>
 
-    <div class="card" onclick="toggleText(this)">
-      <h3 class="text-xl font-semibold mb-2">Эффективный отдых для всей семьи</h3>
-      <p class="text-gray-200">Советы по планированию выходных и каникул с детьми.</p>
-      <div class="hidden-text">
-        <p>Детальная инструкция по организации семейного досуга: от поездок на природу до домашних мини-лагерей. Мы расскажем, как совмещать отдых с обучением и развитием ребенка, какие активности выбирать для разных возрастов, и как сделать досуг безопасным и увлекательным.</p>
-      </div>
-      <button class="btn-primary px-4 py-2 mt-2">Узнать больше</button>
+  <section class="section">
+    <h2>Онлайн-курсы</h2>
+    <div class="glass course">
+      <h3>Курс «Родитель и ребёнок: доверие без барьеров»</h3>
+      <p>Практический курс, где психологи рассказывают о доверительных отношениях с детьми. Включает 6 занятий, интерактивные задания и обратную связь от специалистов. Старт курса — 5 сентября.</p>
+      <a class="btn" href="#">Записаться</a>
     </div>
-  </div>
-</section>
+    <div class="glass course">
+      <h3>Курс «Отдых с пользой: как планировать семейные выходные»</h3>
+      <p>Уникальная программа для родителей, которые хотят делать семейные выходные насыщенными, интересными и полезными. Участники получают чек-листы идей, практические советы и доступ к видеоматериалам.</p>
+      <a class="btn" href="#">Записаться</a>
+    </div>
+    <div class="glass course">
+      <h3>Курс «Профилактика стресса у родителей»</h3>
+      <p>Родительская жизнь полна вызовов. Курс учит техникам релаксации, дыхательным практикам и правильному распределению обязанностей. Участники делятся опытом в онлайн-чатах и получают поддержку специалистов.</p>
+      <a class="btn" href="#">Записаться</a>
+    </div>
+  </section>
 
-<!-- Registration -->
-<section class="container mx-auto p-8">
-  <div class="card">
-    <h2 class="text-3xl font-bold mb-4">Подписка и доступ к новым материалам</h2>
-    <p class="text-gray-200 mb-4">Регистрация позволяет получать советы, инструкции и участие в онлайн-мероприятиях.</p>
-    <form id="register-form" onsubmit="handleRegister(event)">
-      <div class="grid md:grid-cols-2 gap-4 mb-4">
-        <input type="text" id="name" placeholder="Имя" class="p-4 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-        <input type="email" id="email" placeholder="E-mail" class="p-4 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-        <select id="category" class="p-4 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-          <option value="">Выберите категорию</option>
-          <option value="Родитель">Родитель</option>
-          <option value="Педагог">Педагог</option>
-          <option value="Семья">Семья</option>
-        </select>
-      </div>
-      <button type="submit" class="btn-primary px-6 py-3">Зарегистрироваться</button>
-    </form>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="bg-black bg-opacity-90 p-6 text-center mt-8">
-  &copy; 2025 Резорт-Юг. Все права защищены.
-</footer>
-
-<script>
-function toggleText(card){
-  const hidden = card.querySelector('.hidden-text');
-  if(hidden.style.display === "block") hidden.style.display = "none";
-  else hidden.style.display = "block";
-}
-
-function handleRegister(event){
-  event.preventDefault();
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const category = document.getElementById('category').value;
-  alert(`Регистрация успешна! Имя: ${name}, Email: ${email}, Категория: ${category}`);
-  document.getElementById('register-form').reset();
-}
-</script>
+  <footer>
+    © 2025 ООО «Резорт-Юг». Все права защищены.
+  </footer>
 </body>
 </html>
