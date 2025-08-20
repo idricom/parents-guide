@@ -3,38 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Мероприятия — ЧОП ЭГИДА</title>
+  <title>Мероприятия — Резорт-Юг</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #dcedc1, #a8e6cf, #eceff1);
+      background: linear-gradient(135deg, #ffebee, #fff3e0, #e0f7fa);
       color: #1a1a1a;
     }
     .glass {
       background: rgba(255, 255, 255, 0.3);
       border: 1px solid rgba(255, 255, 255, 0.4);
-      backdrop-filter: blur(14px);
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
+      padding: 1.5rem;
     }
     .glass:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
     }
     .btn {
-      background: linear-gradient(135deg, #81c784, #aed581);
+      background: linear-gradient(135deg, #ff8a65, #ffca28);
       color: #fff;
-      padding: 0.6rem 1.4rem;
-      border-radius: 12px;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
       font-weight: 600;
       transition: all 0.3s ease;
       display: inline-block;
     }
     .btn:hover {
-      background: linear-gradient(135deg, #66bb6a, #9ccc65);
+      background: linear-gradient(135deg, #f57c00, #ffb300);
       transform: scale(1.05);
     }
   </style>
@@ -44,53 +45,63 @@
   <!-- Навигация -->
   <nav class="glass fixed top-0 left-0 right-0 p-4 z-50">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold flex items-center gap-2 text-green-700">
-        <i data-lucide="shield" class="w-6 h-6"></i> ЧОП ЭГИДА
+      <h1 class="text-2xl font-bold flex items-center gap-2 text-orange-700">
+        <i data-lucide="sun" class="w-6 h-6"></i> Резорт-Юг
       </h1>
       <div class="space-x-6 text-gray-800 font-medium">
-        <a href="index.html" class="hover:text-green-600">Главная</a>
-        <a href="courses.html" class="hover:text-green-600">Курсы</a>
-        <a href="events.html" class="hover:text-green-600">Мероприятия</a>
+        <a href="index.html" class="hover:text-orange-600">Главная</a>
+        <a href="tips.html" class="hover:text-orange-600">Советы родителям</a>
+        <a href="events.html" class="hover:text-orange-600">Мероприятия</a>
       </div>
     </div>
   </nav>
 
   <!-- Заголовок -->
-  <section class="text-center pt-32 pb-16 px-6">
-    <h2 class="text-5xl font-extrabold mb-6 text-green-800">Предстоящие мероприятия</h2>
-    <p class="text-lg max-w-3xl mx-auto text-gray-700">Семинары, тренинги и вебинары ЧОП «ЭГИДА». Начало — с 5 сентября 2025 года.</p>
+  <section class="text-center pt-24 pb-12 px-6">
+    <h2 class="text-4xl font-extrabold mb-6 text-orange-800">Семейные мероприятия</h2>
+    <p class="text-lg max-w-3xl mx-auto text-gray-700">
+      Присоединяйтесь к нашим мероприятиям, чтобы укрепить семейные узы и узнать больше о воспитании.
+    </p>
   </section>
 
   <!-- Список мероприятий -->
-  <section class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-6 pb-20">
-    <div class="glass p-6">
-      <h3 class="text-xl font-semibold mb-2 flex items-center gap-2"><i data-lucide="calendar-days" class="w-6 h-6 text-green-600"></i> Семинар: Защита офиса</h3>
-      <p class="mb-4 text-gray-700">Дата: 05.09.2025 — Практическое обучение по защите офисных помещений, системам контроля доступа и предотвращению угроз.</p>
-      <a href="#" onclick="alert('Подробнее: Семинар включает кейсы, обучение работе с охранными системами.')" class="btn">Подробнее</a>
+  <section class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 px-6 pb-16">
+    <div class="glass">
+      <h3 class="text-lg font-semibold mb-2 flex items-center gap-2"><i data-lucide="calendar-days" class="w-5 h-5 text-orange-600"></i> Семинар: Планирование семейного отдыха</h3>
+      <p class="mb-4 text-gray-700 text-sm">
+        Дата: 05.09.2025 — Узнайте, как организовать безопасный и веселый семейный отдых.
+      </p>
+      <a href="family-travel-seminar.html" class="btn">Узнать больше</a>
     </div>
 
-    <div class="glass p-6">
-      <h3 class="text-xl font-semibold mb-2 flex items-center gap-2"><i data-lucide="video" class="w-6 h-6 text-green-600"></i> Вебинар: Киберугрозы</h3>
-      <p class="mb-4 text-gray-700">Дата: 10.09.2025 — Онлайн лекция по актуальным киберугрозам, методам защиты персональных данных и бизнеса.</p>
-      <a href="#" onclick="alert('Подробнее: Вебинар содержит демонстрации атак и практические советы.')" class="btn">Подробнее</a>
+    <div class="glass">
+      <h3 class="text-lg font-semibold mb-2 flex items-center gap-2"><i data-lucide="video" class="w-5 h-5 text-orange-600"></i> Вебинар: Воспитание без стресса</h3>
+      <p class="mb-4 text-gray-700 text-sm">
+        Дата: 10.09.2025 — Советы психологов по воспитанию без стресса и капризов.
+      </p>
+      <a href="stress-free-parenting-webinar.html" class="btn">Узнать больше</a>
     </div>
 
-    <div class="glass p-6">
-      <h3 class="text-xl font-semibold mb-2 flex items-center gap-2"><i data-lucide="users" class="w-6 h-6 text-green-600"></i> Тренинг: Действия при ЧС</h3>
-      <p class="mb-4 text-gray-700">Дата: 18.09.2025 — Практическая подготовка к эвакуации и оказанию первой помощи в чрезвычайных ситуациях.</p>
-      <a href="#" onclick="alert('Подробнее: Тренинг содержит практику эвакуации и работы в кризисных условиях.')" class="btn">Подробнее</a>
+    <div class="glass">
+      <h3 class="text-lg font-semibold mb-2 flex items-center gap-2"><i data-lucide="users" class="w-5 h-5 text-orange-600"></i> Мастер-класс: Семейные традиции</h3>
+      <p class="mb-4 text-gray-700 text-sm">
+        Дата: 18.09.2025 — Создайте уникальные семейные традиции для сплочения семьи.
+      </p>
+      <a href="family-traditions-workshop.html" class="btn">Узнать больше</a>
     </div>
 
-    <div class="glass p-6">
-      <h3 class="text-xl font-semibold mb-2 flex items-center gap-2"><i data-lucide="mic" class="w-6 h-6 text-green-600"></i> Форум: Безопасность детей</h3>
-      <p class="mb-4 text-gray-700">Дата: 25.09.2025 — Обсуждение современных угроз для детей и методов защиты в реальной жизни и интернете.</p>
-      <a href="#" onclick="alert('Подробнее: Форум включает лекции специалистов, дискуссии и советы родителям.')" class="btn">Подробнее</a>
+    <div class="glass">
+      <h3 class="text-lg font-semibold mb-2 flex items-center gap-2"><i data-lucide="mic" class="w-5 h-5 text-orange-600"></i> Форум: Безопасность детей на отдыхе</h3>
+      <p class="mb-4 text-gray-700 text-sm">
+        Дата: 25.09.2025 — Обсуждение мер безопасности для детей во время поездок.
+      </p>
+      <a href="child-safety-forum.html" class="btn">Узнать больше</a>
     </div>
   </section>
 
   <!-- Подвал -->
   <footer class="bg-gray-900 text-gray-100 py-6 text-center">
-    © 2025 ООО ЧОП «ЭГИДА». Все права защищены.
+    © 2025 ООО «Резорт-Юг». Все права защищены.
   </footer>
 
   <script>
