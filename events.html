@@ -1,143 +1,100 @@
-<!-- events.html -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Резорт-Юг – Мероприятия</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #0f2a1f, #3a5a47);
-    color: #f0fdf4;
-    min-height:100vh;
-  }
-  nav a:hover { color: #9ae6b4; }
-  .fade-in { animation: fadeIn 1.2s ease-in forwards; opacity:0; }
-  @keyframes fadeIn { 0%{opacity:0; transform:translateY(30px);} 100%{opacity:1; transform:translateY(0);} }
-  .btn-primary {
-    background: linear-gradient(45deg,#22c55e,#86efac);
-    border-radius:12px; font-weight:600; transition:all 0.3s ease;
-  }
-  .btn-primary:hover { background: linear-gradient(45deg,#16a34a,#4ade80); transform:scale(1.05);}
-  .card {
-    background: rgba(255,255,255,0.12); 
-    backdrop-filter: blur(15px); 
-    border-radius:20px; 
-    border:1px solid rgba(255,255,255,0.2); 
-    padding:1.5rem; 
-    transition:all 0.3s; 
-    cursor:pointer;
-  }
-  .card:hover { transform:translateY(-8px); box-shadow:0 20px 40px rgba(0,0,0,0.4);}
-  .hidden-text { display:none; margin-top:0.5rem; color:#d9f99d; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мероприятия — ЧОП ЭГИДА</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #dcedc1, #a8e6cf, #eceff1);
+      color: #1a1a1a;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(14px);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+    }
+    .glass:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+    .btn {
+      background: linear-gradient(135deg, #81c784, #aed581);
+      color: #fff;
+      padding: 0.6rem 1.4rem;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    .btn:hover {
+      background: linear-gradient(135deg, #66bb6a, #9ccc65);
+      transform: scale(1.05);
+    }
+  </style>
 </head>
-<body>
-<!-- Navigation -->
-<nav class="bg-black bg-opacity-50 p-4 sticky top-0 z-20 backdrop-blur-md shadow-lg">
-  <div class="container mx-auto flex justify-between items-center">
-    <div class="text-2xl font-bold">Резорт-Юг</div>
-    <div class="space-x-6">
-      <a href="index.html">Главная</a>
-      <a href="courses.html">Советы и программы</a>
-      <a href="events.html">Мероприятия</a>
-    </div>
-  </div>
-</nav>
+<body class="min-h-screen flex flex-col">
 
-<!-- Hero -->
-<section class="h-[400px] flex items-center justify-center text-center fade-in">
-  <div>
-    <h1 class="text-5xl md:text-6xl font-extrabold mb-6">Мероприятия и встречи для семей</h1>
-    <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Наши активности помогут родителям и детям развивать навыки общения, отдыхать с пользой и наслаждаться совместным досугом. Все мероприятия начинаются с 5 сентября 2025 года.</p>
-  </div>
-</section>
-
-<!-- Events Section -->
-<section class="container mx-auto p-8">
-  <h2 class="text-3xl font-bold mb-6">Ближайшие мероприятия</h2>
-  <div class="grid md:grid-cols-2 gap-6">
-    <div class="card" onclick="toggleText(this)">
-      <h3 class="text-xl font-semibold mb-2">Летний лагерь на природе</h3>
-      <p class="text-green-200 mb-2">Дата: 05–15 сентября 2025</p>
-      <div class="hidden-text">
-        <p>10-дневная программа на свежем воздухе: спортивные игры, творческие мастер-классы, походы и вечерние тематические встречи. Фокус на безопасности детей и развитии командного духа. Включены советы по питанию и организации досуга. Родители могут участвовать вместе с детьми, узнавая техники активного отдыха и образовательные игры.</p>
+  <!-- Навигация -->
+  <nav class="glass fixed top-0 left-0 right-0 p-4 z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold flex items-center gap-2 text-green-700">
+        <i data-lucide="shield" class="w-6 h-6"></i> ЧОП ЭГИДА
+      </h1>
+      <div class="space-x-6 text-gray-800 font-medium">
+        <a href="index.html" class="hover:text-green-600">Главная</a>
+        <a href="courses.html" class="hover:text-green-600">Курсы</a>
+        <a href="events.html" class="hover:text-green-600">Мероприятия</a>
       </div>
-      <button class="btn-primary px-4 py-2 mt-2">Узнать больше</button>
+    </div>
+  </nav>
+
+  <!-- Заголовок -->
+  <section class="text-center pt-32 pb-16 px-6">
+    <h2 class="text-5xl font-extrabold mb-6 text-green-800">Предстоящие мероприятия</h2>
+    <p class="text-lg max-w-3xl mx-auto text-gray-700">Семинары, тренинги и вебинары ЧОП «ЭГИДА». Начало — с 5 сентября 2025 года.</p>
+  </section>
+
+  <!-- Список мероприятий -->
+  <section class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-6 pb-20">
+    <div class="glass p-6">
+      <h3 class="text-xl font-semibold mb-2 flex items-center gap-2"><i data-lucide="calendar-days" class="w-6 h-6 text-green-600"></i> Семинар: Защита офиса</h3>
+      <p class="mb-4 text-gray-700">Дата: 05.09.2025 — Практическое обучение по защите офисных помещений, системам контроля доступа и предотвращению угроз.</p>
+      <a href="#" onclick="alert('Подробнее: Семинар включает кейсы, обучение работе с охранными системами.')" class="btn">Подробнее</a>
     </div>
 
-    <div class="card" onclick="toggleText(this)">
-      <h3 class="text-xl font-semibold mb-2">Онлайн-семинар «Совместный отдых дома»</h3>
-      <p class="text-green-200 mb-2">Дата: 10 сентября 2025</p>
-      <div class="hidden-text">
-        <p>Вебинар для родителей с практическими примерами организации домашних игр, творческих и развивающих занятий. Эксперты рассказывают, как сбалансировать учебу, отдых и досуг, а также как вовлечь детей в безопасные и интересные активности. Все зарегистрированные участники получат записи вебинара и пошаговые инструкции.</p>
-      </div>
-      <button class="btn-primary px-4 py-2 mt-2">Узнать больше</button>
+    <div class="glass p-6">
+      <h3 class="text-xl font-semibold mb-2 flex items-center gap-2"><i data-lucide="video" class="w-6 h-6 text-green-600"></i> Вебинар: Киберугрозы</h3>
+      <p class="mb-4 text-gray-700">Дата: 10.09.2025 — Онлайн лекция по актуальным киберугрозам, методам защиты персональных данных и бизнеса.</p>
+      <a href="#" onclick="alert('Подробнее: Вебинар содержит демонстрации атак и практические советы.')" class="btn">Подробнее</a>
     </div>
 
-    <div class="card" onclick="toggleText(this)">
-      <h3 class="text-xl font-semibold mb-2">Творческая мастерская для детей</h3>
-      <p class="text-green-200 mb-2">Дата: 15 сентября 2025</p>
-      <div class="hidden-text">
-        <p>Интерактивный воркшоп по рисованию, лепке и креативным проектам. Развивает воображение и моторику детей. Для родителей — отдельная секция с практическими советами по организации домашних творческих зон и безопасной работы с материалами.</p>
-      </div>
-      <button class="btn-primary px-4 py-2 mt-2">Узнать больше</button>
+    <div class="glass p-6">
+      <h3 class="text-xl font-semibold mb-2 flex items-center gap-2"><i data-lucide="users" class="w-6 h-6 text-green-600"></i> Тренинг: Действия при ЧС</h3>
+      <p class="mb-4 text-gray-700">Дата: 18.09.2025 — Практическая подготовка к эвакуации и оказанию первой помощи в чрезвычайных ситуациях.</p>
+      <a href="#" onclick="alert('Подробнее: Тренинг содержит практику эвакуации и работы в кризисных условиях.')" class="btn">Подробнее</a>
     </div>
 
-    <div class="card" onclick="toggleText(this)">
-      <h3 class="text-xl font-semibold mb-2">Семейный пикник с играми и активностями</h3>
-      <p class="text-green-200 mb-2">Дата: 20 сентября 2025</p>
-      <div class="hidden-text">
-        <p>Праздник на свежем воздухе с играми, квестами и спортивными соревнованиями для всей семьи. Советы по безопасному и активному отдыху, подготовке инвентаря, планированию питания и организации отдыха для детей разного возраста. Включает практические упражнения для развития командного взаимодействия и креативного мышления.</p>
-      </div>
-      <button class="btn-primary px-4 py-2 mt-2">Узнать больше</button>
+    <div class="glass p-6">
+      <h3 class="text-xl font-semibold mb-2 flex items-center gap-2"><i data-lucide="mic" class="w-6 h-6 text-green-600"></i> Форум: Безопасность детей</h3>
+      <p class="mb-4 text-gray-700">Дата: 25.09.2025 — Обсуждение современных угроз для детей и методов защиты в реальной жизни и интернете.</p>
+      <a href="#" onclick="alert('Подробнее: Форум включает лекции специалистов, дискуссии и советы родителям.')" class="btn">Подробнее</a>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Registration -->
-<section class="container mx-auto p-8">
-  <div class="card">
-    <h2 class="text-3xl font-bold mb-4">Регистрация на мероприятия</h2>
-    <p class="text-green-100 mb-4">Заполните форму, чтобы получать приглашения на будущие мероприятия, советы и инструкции.</p>
-    <form id="register-form" onsubmit="handleRegister(event)">
-      <div class="grid md:grid-cols-2 gap-4 mb-4">
-        <input type="text" id="name" placeholder="Имя" class="p-4 rounded-lg bg-green-900 text-white focus:outline-none focus:ring-2 focus:ring-green-400" required>
-        <input type="email" id="email" placeholder="E-mail" class="p-4 rounded-lg bg-green-900 text-white focus:outline-none focus:ring-2 focus:ring-green-400" required>
-        <select id="category" class="p-4 rounded-lg bg-green-900 text-white focus:outline-none focus:ring-2 focus:ring-green-400" required>
-          <option value="">Выберите категорию</option>
-          <option value="Родитель">Родитель</option>
-          <option value="Педагог">Педагог</option>
-          <option value="Семья">Семья</option>
-        </select>
-      </div>
-      <button type="submit" class="btn-primary px-6 py-3">Зарегистрироваться</button>
-    </form>
-  </div>
-</section>
+  <!-- Подвал -->
+  <footer class="bg-gray-900 text-gray-100 py-6 text-center">
+    © 2025 ООО ЧОП «ЭГИДА». Все права защищены.
+  </footer>
 
-<!-- Footer -->
-<footer class="bg-black bg-opacity-50 p-6 text-center backdrop-blur-md mt-8">
-  &copy; 2025 Резорт-Юг. Все права защищены.
-</footer>
-
-<script>
-function toggleText(card){
-  const hidden = card.querySelector('.hidden-text');
-  if(hidden.style.display === "block") hidden.style.display = "none";
-  else hidden.style.display = "block";
-}
-
-function handleRegister(event){
-  event.preventDefault();
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const category = document.getElementById('category').value;
-  alert(`Регистрация успешна! Имя: ${name}, Email: ${email}, Категория: ${category}`);
-  document.getElementById('register-form').reset();
-}
-</script>
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 </html>
