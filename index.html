@@ -38,6 +38,22 @@
       background: linear-gradient(135deg, #f57c00, #ffb300);
       transform: scale(1.05);
     }
+    #modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+    }
+    #modal .glass {
+      max-width: 400px;
+      text-align: center;
+    }
   </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -92,6 +108,42 @@
     </div>
   </section>
 
+  <!-- Регистрация -->
+  <section class="max-w-6xl mx-auto px-6 pb-16">
+    <div class="glass p-6">
+      <h2 class="text-2xl font-extrabold mb-4 text-orange-800 text-center">Регистрация участника</h2>
+      <p class="text-base text-gray-700 mb-4 text-center">
+        Запишитесь на наши курсы и мероприятия, чтобы получить доступ к материалам и консультациям.
+      </p>
+      <div class="max-w-md mx-auto">
+        <div class="mb-4">
+          <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Имя</label>
+          <input type="text" id="name" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Введите ваше имя" required>
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+          <input type="email" id="email" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Введите ваш email" required>
+        </div>
+        <div class="mb-4">
+          <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Телефон</label>
+          <input type="tel" id="phone" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Введите ваш телефон" required>
+        </div>
+        <button id="register-btn" class="btn w-full text-center">Зарегистрироваться</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Модальное окно -->
+  <div id="modal" class="hidden">
+    <div class="glass p-6">
+      <h3 class="text-lg font-semibold mb-4 text-orange-800">Регистрация успешна!</h3>
+      <p class="text-gray-700 text-sm mb-4">
+        Спасибо за регистрацию! Вы получите доступ к материалам и консультациям на указанный email.
+      </p>
+      <button id="close-modal" class="btn">Закрыть</button>
+    </div>
+  </div>
+
   <!-- Подвал -->
   <footer class="bg-gray-900 text-gray-100 py-6 text-center">
     © 2025 ООО «Резорт-Юг». Все права защищены.
@@ -99,6 +151,36 @@
 
   <script>
     lucide.createIcons();
+
+    // Показ модального окна при нажатии на кнопку
+    document.getElementById('register-btn').addEventListener('click', () => {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      if (name && email && phone) {
+        document.getElementById('modal').style.display = 'flex';
+      } else {
+        alert('Пожалуйста, заполните все поля.');
+      }
+    });
+
+    // Закрытие модального окна
+    document.getElementById('close-modal').addEventListener('click', () => {
+      document.getElementById('modal').style.display = 'none';
+      document.getElementById('name').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('phone').value = '';
+    });
+
+    // Закрытие модального окна при клике вне области
+    document.getElementById('modal').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('modal')) {
+        document.getElementById('modal').style.display = 'none';
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('phone').value = '';
+      }
+    });
   </script>
 </body>
 </html>
